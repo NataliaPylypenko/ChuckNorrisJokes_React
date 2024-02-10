@@ -1,0 +1,6 @@
+export * from './side/Side'
+export * from './main/Main'
+export * from './form/Form'
+export * from './UI/input/Input'
+export * from './UI/button/Button'
+export * from './UI/title/Title'

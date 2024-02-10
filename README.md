@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+[CNJokes_React](https://nataliapylypenko.github.io/CNJokes_React/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Додаток з Жартами про Чака Норріса
 
-## Available Scripts
+### Мета:
+Створити додаток із жартами про Чака Норріса, який отримує дані від API і дозволяє користувачам переглядати,
+категоризувати, додавати у вибране та видаляти жарти.
 
-In the project directory, you can run:
+### Функціональність:
+1. Використовуйте API Чака Норріса, щоб отримати жарти у форматі JSON - `https://api.chucknorris.io/`
+2. Можливість отримати випадковий жарт.
+3. Можливість отримати випадковий жарт із категорій (використовуйте API, щоб отримати всі доступні категорії).
+4. Можливість отримувати анекдоти за допомогою вільного текстового пошуку.
+5. Будь-який жарт можна позначити/зняти з вибраного.
+6. Анекдоти, позначені як улюблені, повинні з'явитися в правій частині Вибране.
+7. Улюблені жарти повинні бути доступні після перезавантаження сторінки та зберігатися в браузері.
 
-### `npm start`
+## Project Structure:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* `src/assets` - all global images
+* `src/component` - components that consist of several ui or those that cannot be reused
+* `src/component/UI` - all ui, reusable components (Button, Item, Input...)
+* `src/layouts` - all layouts, what is always on the page (Header, Footer, Navbar, Sidebar...)
+* `src/mock` - all temporary files for testing and demonstration of the project
+* `src/sections` - all large blocks containing several components
+* `src/utils` - all reusable functions, custom hooks
+* `src/services` - all requests to the api
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## GitHub Pages
 
-### `npm test`
+* Go to Settings / Pages
+* In the tab GitHub Pages find Source, select branch main, push the Save
+* Copy the unique link (UL)
+* Then go to the project on package.json
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+``` js
+...
+"homepage": "[unique_link]/",
+...
+"scripts": {
+    ...
+    "deploy": "gh-pages -d [the_name_of_the_build_folder]",
+    "predeploy": "npm run build"
+  },
+...
+```
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Install the package `npm install gh-pages --save-dev`
+* Go to Settings / Pages
+* In the tab GitHub Pages find Source, select branch gh-pages, push the Save
+* For deploy to the branch gh-pages `npm run deploy`
