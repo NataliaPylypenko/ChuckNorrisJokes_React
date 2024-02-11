@@ -1,9 +1,7 @@
 import React from 'react';
 
-export const Title = () => {
+export const Title = ({children}) => {
     return (
-        <div>
-
-        </div>
+        <h2>{children}</h2>
     );
 };

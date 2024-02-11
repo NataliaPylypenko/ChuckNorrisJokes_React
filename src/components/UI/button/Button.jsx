@@ -1,9 +1,8 @@
 import React from 'react';
+import cn from './Button.module.scss'
 
-export const Button = () => {
+export const Button = ({children}) => {
     return (
-        <div>
-
-        </div>
+        <button type="submit" className={cn.btn + ' ' + cn.btnSubmit}>{children}</button>
     );
 };

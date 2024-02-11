@@ -1,20 +1,21 @@
 import React from 'react';
-import {Form} from "..";
+import {Form, Title} from "..";
+import cn from './Main.module.scss'
 
 export const Main = () => {
     return (
-        <div className="main">
-            <h2 className="main__title">MSI 2020</h2>
+        <div className={cn.main}>
+            <Title className={cn.title}>MSI 2020</Title>
 
-            <h2 className="main__action">
-                <span className="greeting">Hey!</span>
+            <Title className={cn.action}>
+                <span className={cn.greeting}>Hey!</span>
                 <br />
                 Let’s try to find a joke for you:
-            </h2>
+            </Title>
 
             <Form />
 
-            <div id="cardsJoke" className="cards"></div>
+            {/*<div id="cardsJoke" className="cards"></div>*/}
         </div>
     );
 };

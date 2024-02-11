@@ -1,0 +1,17 @@
+.side {
+  background-color: var(--lightGray);
+  padding: 40px;
+
+  @media (max-width: 991px){
+    display: none;
+    width: 480px;
+    max-width: 100%;
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--gray);
+  margin-bottom: 20px;
+}

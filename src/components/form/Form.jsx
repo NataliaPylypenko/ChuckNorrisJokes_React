@@ -1,34 +1,35 @@
 import React from 'react';
+import {Button} from "..";
+import cn from './Form.module.scss'
 
 export const Form = () => {
     return (
-        <form id="jokeForm" className="form">
-            <div className="collapsible">
+        <form className={cn.form}>
+            <div className={cn.collapsible}>
                 <label>
-                    <input type="radio" name="jokeType" value="random" checked> Random Value </input>
+                    {/*<input type="radio" name="jokeType" value="random" checked> Random Value </input>*/}
                 </label>
             </div>
-            <div></div>
 
-            <div className="collapsible">
+            <div className={cn.collapsible}>
                 <label>
-                    <input type="radio" name="jokeType" value="categories"> Categories </input>
+                    {/*<input type="radio" name="jokeType" value="categories"> Categories </input>*/}
                 </label>
             </div>
-            <div className="content">
-                <ul id="jokeCategories" className="category-labels"></ul>
+            <div className={cn.content}>
+                {/*<ul id="jokeCategories" className="category-labels"></ul>*/}
             </div>
 
-            <div className="collapsible">
+            <div className={cn.collapsible}>
                 <label>
-                    <input type="radio" name="jokeType" id="jokeSearch" value="search"> Search </input>
+                    {/*<input type="radio" name="jokeType" id="jokeSearch" value="search"> Search </input>*/}
                 </label>
             </div>
-            <div className="content">
-                <input type="text" className="search-input" placeholder="Free text search..." />
+            <div className={cn.content}>
+                {/*<input type="text" className="search-input" placeholder="Free text search..." />*/}
             </div>
 
-            <button type="submit" id="getJoke" className="btn btn-submit">Get a joke</button>
+            <Button>Get a joke</Button>
         </form>
     );
 };

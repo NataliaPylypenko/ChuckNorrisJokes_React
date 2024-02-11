@@ -1,0 +1,52 @@
+.form {
+  margin-bottom: 40px;
+}
+
+.collapsible {
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.collapsible input:checked {
+  color: #333;
+}
+
+.content {
+  display: none;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.category-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.category-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+  border: 2px solid var(--lightGray);
+  border-radius: 6px;
+  padding: 6px 15px;
+  cursor: pointer;
+  list-style-type: none;
+}
+.category-label.active {
+  color: var(--darkGray);
+  background-color: var(--lightGray);
+}
+input[name="jokeCategory"] {
+  display: none;
+}
+
+.search-input {
+  border: 2px solid var(--darkGray);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 15px;
+}
