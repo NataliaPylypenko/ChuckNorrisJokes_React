@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Title = ({children}) => {
+export const Title = ({style, children}) => {
     return (
-        <h2>{children}</h2>
+        <h2 className={style}>{children}</h2>
     );
 };

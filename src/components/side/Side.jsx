@@ -1,12 +1,29 @@
-import React from 'react';
-import {Title} from "..";
+import React, {useEffect, useState} from 'react';
+import {JokeCard, Title} from "..";
 import cn from './Side.module.scss'
 
 export const Side = () => {
+
+    const fetchLocalStorageData = (key, defaultValue = []) => {
+        let storage = localStorage.getItem(key);
+        return storage ? JSON.parse(storage) : defaultValue;
+    };
+
+    const [favoriteJokes, setFavoriteJokes] = useState([]);
+
+    useEffect(() => {
+        setFavoriteJokes(fetchLocalStorageData('favoriteJokes'));
+    }, []);
+
+    console.log(favoriteJokes);
+
     return (
         <div className={cn.side}>
-            <Title className={cn.title}>Favourite</Title>
-            {/*<div id="favoriteCardsJoke" className="cards"></div>*/}
+            <Title style={cn.title}>Favourite</Title>
+
+            <div className="cards">
+                <JokeCard/>
+            </div>
         </div>
     );
 };

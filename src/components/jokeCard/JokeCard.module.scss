@@ -1,0 +1,89 @@
+.card {
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-top: 27px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.favoriteBtn {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.favoriteBtn svg path:first-child {
+  fill: transparent;
+}
+.favoriteBtn.isFavorite svg path:first-child {
+  fill: #FF6767;
+}
+
+.jokeId {
+  font-size: 10px;
+  color: var(--gray);
+  margin-bottom: 5px;
+}
+.jokeId a {
+  color: var(--accentLight);
+  padding: 0 5px;
+}
+
+.joke {
+  margin-bottom: 20px;
+}
+
+.jokeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.timeUpdated {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gray);
+}
+.jokeCategory {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  background-color: var(--white);
+  border-radius: 6px;
+}
+
+.cardSm {
+  padding: 20px;
+  background-color: var(--white);
+  box-shadow: 0px 25px 20px -20px rgba(0,0,0,0.1);
+}
+.cardSm .cardIcon {
+  background-color: var(--lightGray);
+}
+
+.cardLg {
+  padding: 40px;
+  background-color: var(--lightGray);
+}
+.cardLg .cardIcon {
+  background-color: var(--white);
+}
+.cardLg .joke {
+  font-size: 18px;
+}
