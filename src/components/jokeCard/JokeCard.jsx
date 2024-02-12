@@ -56,7 +56,7 @@ export const JokeCard = ({favoriteJoke}) => {
                 </div>
                 <div className={cn.joke}>{favoriteJoke.value}</div>
                 <div className={cn.jokeRow}>
-                    <div className={cn.timeUpdated}>Last update: <span>{getLastUpdate(favoriteJoke.created_at)}</span> ago</div>
+                    <div className={cn.timeUpdated}>Last update: <span>{getLastUpdate(favoriteJoke['created_at'])}</span> ago</div>
                 </div>
             </div>
         </div>
