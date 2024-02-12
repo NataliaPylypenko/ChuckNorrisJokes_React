@@ -15,14 +15,14 @@ export const Side = () => {
         setFavoriteJokes(fetchLocalStorageData('favoriteJokes'));
     }, []);
 
-    console.log(favoriteJokes);
-
     return (
         <div className={cn.side}>
             <Title style={cn.title}>Favourite</Title>
 
             <div className="cards">
-                <JokeCard/>
+                {favoriteJokes && favoriteJokes.map(favoriteJoke=> (
+                    <JokeCard key={favoriteJoke.id} favoriteJoke={favoriteJoke}/>
+                ))}
             </div>
         </div>
     );

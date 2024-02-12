@@ -1,7 +1,23 @@
 import React from 'react';
 import cn from './JokeCard.module.scss'
 
-export const JokeCard = () => {
+export const JokeCard = ({favoriteJoke}) => {
+    // console.log(favoriteJoke);
+
+    const getLastUpdate = (createdAt) => {
+      const createdAtDate = new Date(createdAt);
+      const now = new Date();
+      const timeDifference = now - createdAtDate;
+
+      if(timeDifference < 1000*60*60*24*2) {
+          return `${Math.floor(timeDifference / (1000 * 60 * 60))} hours`;
+      } else if(timeDifference > 1000*60*60*24*2 && timeDifference < 1000*60*60*24*30*2) {
+          return `${Math.floor(timeDifference / (1000 * 60 * 60 * 24))} days`;
+      } else {
+          return `${Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 30))} months`;
+      }
+    };
+
     return (
         <div className={cn.card +' '+ cn.cardSm}>
             <div className={cn.cardIcon}>
@@ -27,7 +43,7 @@ export const JokeCard = () => {
                 </div>
                 <div className={cn.jokeId}>
                     ID:
-                    <a href="#">D97ujbWvQ-6lWz94myeAnA</a>
+                    <a href="#">{favoriteJoke.id}</a>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -38,11 +54,9 @@ export const JokeCard = () => {
                             fill="#8EA7FF"></path>
                     </svg>
                 </div>
-                <div className={cn.joke}>5 star New York restaurants use Chuck Norris' toe jam as both a saffron
-                    and truffle substitute.
-                </div>
+                <div className={cn.joke}>{favoriteJoke.value}</div>
                 <div className={cn.jokeRow}>
-                    <div className={cn.timeUpdated}>Last update: <span>1923 hours</span> ago</div>
+                    <div className={cn.timeUpdated}>Last update: <span>{getLastUpdate(favoriteJoke.created_at)}</span> ago</div>
                 </div>
             </div>
         </div>
