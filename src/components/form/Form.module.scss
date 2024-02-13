@@ -2,15 +2,21 @@
   margin-bottom: 40px;
 }
 
-.collapsible {
+.form-check {
   font-size: 18px;
   width: 100%;
   margin-bottom: 10px;
 }
 
-.collapsible input:checked {
-  color: #333;
+.form-check-input {
+  margin-right: 5px;
+
+  &:checked {
+    color: #333;
+  }
 }
+
+
 
 .content {
   display: none;
