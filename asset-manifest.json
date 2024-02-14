@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ChuckNorrisJokes_React/static/css/main.0a60d8f6.css",
-    "main.js": "/ChuckNorrisJokes_React/static/js/main.0010217e.js",
+    "main.js": "/ChuckNorrisJokes_React/static/js/main.028aa45f.js",
     "index.html": "/ChuckNorrisJokes_React/index.html",
     "main.0a60d8f6.css.map": "/ChuckNorrisJokes_React/static/css/main.0a60d8f6.css.map",
-    "main.0010217e.js.map": "/ChuckNorrisJokes_React/static/js/main.0010217e.js.map"
+    "main.028aa45f.js.map": "/ChuckNorrisJokes_React/static/js/main.028aa45f.js.map"
   },
   "entrypoints": [
     "static/css/main.0a60d8f6.css",
-    "static/js/main.0010217e.js"
+    "static/js/main.028aa45f.js"
   ]
 }
