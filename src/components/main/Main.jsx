@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {Form, Title} from "..";
+import {Form, JokeCard, Title} from "..";
 import cn from './Main.module.scss'
+import {fetchJokes} from "../../services/jokeServices";
 
 export const Main = () => {
     const inputs = [
@@ -20,14 +21,34 @@ export const Main = () => {
 
     const [selectedValue, setSelectedValue] = useState('random');
 
+    const [jokes, setJokes] = useState([]);
+
+    console.log(jokes);
+
     const changeChecked = item => {
         setSelectedValue(item.value);
     };
 
     const submitForm = e => {
         e.preventDefault();
-        console.log(selectedValue);
-        // get the selected value and send a request to the api
+
+        switch (selectedValue) {
+            case 'random':
+                fetchJokes('/random')
+                    .then(data => setJokes([...jokes, data]));
+                break;
+            case 'categories':
+                let checkedCategory = 'animal';
+                fetchJokes(`/random?category=${checkedCategory}`)
+                    .then(data => setJokes([...jokes, data]));
+                break;
+            case 'search':
+                let queryValue = 'cat';
+                fetchJokes(`/search?query=${queryValue}`)
+                    .then(data => data.result.forEach(joke => setJokes([...jokes, joke])));
+                break;
+        }
+
         e.target.reset();
     };
 
@@ -42,6 +63,11 @@ export const Main = () => {
             </Title>
 
             <Form submitForm={submitForm} changeChecked={changeChecked} selectedValue={selectedValue} inputs={inputs} />
+
+            {jokes && jokes.map(joke => (
+                <JokeCard key={joke.id} joke={joke} cl='cardLg' />
+            ))}
+
         </div>
     );
 };

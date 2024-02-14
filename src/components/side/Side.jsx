@@ -21,7 +21,7 @@ export const Side = () => {
 
             <div className="cards">
                 {favoriteJokes && favoriteJokes.map(favoriteJoke=> (
-                    <JokeCard key={favoriteJoke.id} favoriteJoke={favoriteJoke}/>
+                    <JokeCard key={favoriteJoke.id} joke={favoriteJoke} cl={'cardSm'}/>
                 ))}
             </div>
         </div>

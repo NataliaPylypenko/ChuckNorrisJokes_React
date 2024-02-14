@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from './JokeCard.module.scss'
 
-export const JokeCard = ({favoriteJoke}) => {
-    // console.log(favoriteJoke);
+export const JokeCard = ({joke, cl}) => {
 
     const getLastUpdate = (createdAt) => {
       const createdAtDate = new Date(createdAt);
@@ -19,7 +18,7 @@ export const JokeCard = ({favoriteJoke}) => {
     };
 
     return (
-        <div className={cn.card +' '+ cn.cardSm}>
+        <div className={cn.card +' '+ cn[cl]}>
             <div className={cn.cardIcon}>
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -43,7 +42,7 @@ export const JokeCard = ({favoriteJoke}) => {
                 </div>
                 <div className={cn.jokeId}>
                     ID:
-                    <a href="#">{favoriteJoke.id}</a>
+                    <a href="#">{joke.id}</a>
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
                          xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -54,9 +53,11 @@ export const JokeCard = ({favoriteJoke}) => {
                             fill="#8EA7FF"></path>
                     </svg>
                 </div>
-                <div className={cn.joke}>{favoriteJoke.value}</div>
+                <div className={cn.joke}>{joke.value}</div>
                 <div className={cn.jokeRow}>
-                    <div className={cn.timeUpdated}>Last update: <span>{getLastUpdate(favoriteJoke['created_at'])}</span> ago</div>
+                    <div className={cn.timeUpdated}>Last update: <span>{getLastUpdate(joke['created_at'])}</span> ago</div>
+                    {joke.categories && joke.categories
+                        .map(category => <div className={cn.jokeCategory}><span>{category}</span></div>)}
                 </div>
             </div>
         </div>
